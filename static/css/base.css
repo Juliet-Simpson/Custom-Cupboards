@@ -210,6 +210,23 @@ body {
         font-size: 110%;
     }
 }
+/* About */
+.about-content {
+    background: url('/media/measure-1.png') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    z-index: -2;
+    background-repeat: no-repeat;
+}
+
+.underline{
+    text-decoration: underline;
+}
+.larger{
+    font-size: 115%;
+}
 
 /* footer */
 .footer {
