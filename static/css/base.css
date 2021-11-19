@@ -227,6 +227,9 @@ body {
 .larger{
     font-size: 115%;
 }
+.narrower{
+    width:100px !important;
+}
 
 /* footer */
 .footer {
