@@ -234,8 +234,29 @@ body {
 .larger{
     font-size: 115%;
 }
+@media(max-width: 592px){
+    .larger{
+        font-size: 85%; 
+    }
+}
 .narrower{
     width:100px !important;
+}
+.info-content {
+    background: url('/media/parts.png') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    z-index: -2;
+    background-repeat: no-repeat;
+}
+.info-card{
+    background-color: rgba(245, 245, 245, 0.733) !important;
+}
+
+.red{
+    color: red !important;
 }
 
 /* footer */
