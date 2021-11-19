@@ -131,8 +131,7 @@
         {% include 'includes/cart-prev.html' %}
     </header>
 
-
-
+    <section>
     {% if messages %}
     <div class="toasts-container d-flex justify-content-center align-items-center">
         {% for message in messages %}
@@ -150,7 +149,7 @@
         {% endfor %}
     </div>
     {% endif %}
-<section>
+
     {% block page_header %}
     {% endblock %}
 
