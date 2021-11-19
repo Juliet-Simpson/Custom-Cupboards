@@ -145,7 +145,6 @@ body {
     #sidenav_underlay {
         display: none !important;
     }
-
 }
 
 .close-right {
@@ -179,7 +178,7 @@ body {
 /* Home */
 
 .home-content {
-    background: url('/media/home-2.png') no-repeat center center;
+    background: url('/media/doors.png') no-repeat center center;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -193,11 +192,19 @@ body {
 }
 
 .home-card {
-    background-color: rgba(255, 255, 255, 0.664);
+    background-color: rgba(255, 255, 255, 0.568);
 }
 
 .check-card {
-    background-color: rgba(252, 221, 136, 0.397);
+    background-color: rgba(252, 198, 136, 0.397);
+}
+.home-btn{
+    border-radius: 0;
+    width: 12rem;
+    background-color: rgb(168, 153, 153, 0.95) !important;
+}
+.home-btn:hover{
+    background-color: white !important;
 }
 
 .large {
@@ -270,7 +277,6 @@ section {
 .details-btn {
     width: 11rem;
     border-radius: 0;
-
 }
 
 .details-btn:hover {
