@@ -217,7 +217,7 @@ body {
     bottom: 0 !important;
     width: 100%;
     height: fit-content;
-    z-index: -2;
+    z-index: 1;
 
 }
 
@@ -446,7 +446,6 @@ form {
     }
 }
 
-
 .no-bg:focus {
     border: none;
 }
@@ -511,7 +510,6 @@ form {
     color: rgb(156, 98, 31) !important;
 }
 
-
 /* Allauth formatting */
 
 .hover-white {
@@ -570,8 +568,6 @@ form {
 
 .material-btn {
     width: 4rem !important;
-
-
 }
 
 /* Main image widget */
