@@ -150,6 +150,9 @@ body {
 .close-right {
     text-align: right;
 }
+.sn-hv:hover{
+    background-color: rgb(168, 153, 153) !important;
+}
 
 .sidenav .closebtn {
     margin-right: 15px;
@@ -238,6 +241,9 @@ body {
     .larger{
         font-size: 85%; 
     }
+}
+.largerr{
+    font-size: 115%;
 }
 .narrower{
     width:100px !important;
