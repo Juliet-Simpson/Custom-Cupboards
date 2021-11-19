@@ -196,6 +196,10 @@ body {
     background-color: rgba(255, 255, 255, 0.664);
 }
 
+.check-card {
+    background-color: rgba(252, 221, 136, 0.397);
+}
+
 .large {
     font-size: 100%;
     margin: 0;
@@ -442,13 +446,14 @@ form {
     }
 }
 
+
 .no-bg:focus {
     border: none;
 }
 
 /* Toasts */
 
-.overlay {
+.toast-overlay {
     height: 100vh;
     width: 100%;
     top: 0;
@@ -543,6 +548,16 @@ form {
     color: #aab7c4;
 }
 
+.overlay {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -4;
+    background: rgba(148, 143, 140, 0.664);
+}
+
 /* Product management */
 .cancel-btn {
     width: 7.5rem;
@@ -555,6 +570,8 @@ form {
 
 .material-btn {
     width: 4rem !important;
+
+
 }
 
 /* Main image widget */
