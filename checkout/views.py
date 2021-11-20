@@ -60,7 +60,7 @@ def checkout(request):
             for item_id, item_data in cart.items():
                 try:
                     cupboard = Cupboard.objects.get(id=item_id)
-                
+          
                     for code, quantity in item_data['cupboards_by_code'].items():
 
                         height = code.split('#')[0]

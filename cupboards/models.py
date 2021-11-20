@@ -7,7 +7,8 @@ class Material(models.Model):
 
     name = models.CharField(max_length=254)
     display_name = models.CharField(max_length=254, null=True, blank=True)
-    price_per_m2 = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False)
+    price_per_m2 = models.DecimalField(max_digits=6, decimal_places=2,
+                                       null=False, blank=False)
 
     def __str__(self):
         return self.name
@@ -31,7 +32,7 @@ class Cupboard(models.Model):
 
     design_id = models.CharField(max_length=6)
     type = models.ForeignKey('Type', null=True, blank=True,
-                                 on_delete=models.SET_NULL)
+                             on_delete=models.SET_NULL)
     material = models.ForeignKey('Material', null=True, blank=False,
                                  on_delete=models.CASCADE)
     name = models.CharField(max_length=254)
@@ -41,5 +42,4 @@ class Cupboard(models.Model):
     main_image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.name 
-
+        return self.name

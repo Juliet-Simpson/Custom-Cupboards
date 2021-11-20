@@ -32,7 +32,7 @@ header {
 }
 
 .no-bg {
-    background-color: none;
+    background: none;
 }
 
 body {

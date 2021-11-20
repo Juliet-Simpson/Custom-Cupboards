@@ -202,11 +202,34 @@ Contains settings.py containing all the settings for this project and urls.py co
 
 **Home**
 
-Loads the home page, about pages and info pages
+Loads the home page, about pages and info pages.  gives the user a welcoming landing page and templates providing all the background information about the company.
 
 **Cupboards**
 
-Originally named cupboards, sometimes loosely referred to as Designs which would be a more logical name for it ans it in fact contains designs for both cupboards and shelving units.
+Named 'cupboards' at the outset of the project, later sometimes referred to as 'designs' as designs would be a more logical name, given both cupboards and shelving units are available.  
+Contains models, views and forms for users and site owners to perform all functionality related to 'cupboards' (and shelving untits).  
+* Models
+    * Contains 3 models: Type, Material and Cupboard.  Type and Material are both foreign keys in the Cupboard Model. 
+* Designs page, entitled so from a users perspective, infact cupboards.html, giving users a list of all designs with an image and information and the option to select this design to proceed further towards its purchase.  A view, 'cupboards' and url for rendering the template.
+* Filtering by type of the designs on cupbaords.html and sorting them by name, example price or material.  Functionality to do this within the 'cupboards' view.
+* Cupboard details page, cupboard_details.html, and view and url to render the template, where a user can find out more information about a selected design and enter their required dimensions and shelves to press calculated and receive a quote on the next page.
+* Calculated Cupboard page, calculated_cupboard.html, showing the cost calculation result and postage cost for the users selected design, dimensions and shelves and option to recalculate this or add it to the cart. A view which performs the calculation and renders the page and associated url.
+* Quantity input selector buttons with the calculation result to easily select how many of a calculated cupboard to add to the cart.  An html file, quantity_input_script.html, which is an include also used in the cart template, which contains the javascript for the increase and decrease quantity buttons.
+
+For superusers:
+
+* An Add a Design page, add_design.html, a view and url to render it and add the design to the database.  A form in forms.py to provide inputs for the fields in the database.
+* An Edit button on the designs page for each design, opening a template very similar to add_design, edit_design.html, but with preloaded form fields for the current cupboard data.  The current image for the design is shown as a custom thumbnail widget, clickable to open an expanded image in a new window. A view and url to render this template and a view to edit the 'cupboard' in the database.
+* A Delete button on the designs page for each design which raises a warning message requesting confirmation of the delete or option to cancel. A view to perform the action in the database if the delete is confirmed.
+* A Materials Management page, materials.html, listing all materials and their price per sqm and buttons to edit or delete them. A view and url to render the page.
+* A form on the Materials page to add a new material with fields from the database coming from forms.py and a view to add the material to the database.
+* An Edit Material page, edit_material.html, just showing a form the same as for adding a material but with fields preloaded with the material's data.
+* A warning message requesting confirmation or option to cancel if the delete button is pressed next to a material. A view to delete the material from the database if confirmed.
+
+
+**Cart**
+
+Caonatins all functionality related to the shopping cart, adding to, updating and removing from it.  
 
 
 
@@ -215,7 +238,9 @@ Originally named cupboards, sometimes loosely referred to as Designs which would
 
 ### Left to implement
 
-* Update dimensions of a unit in the cart.
+* Update dimensions of an item in the cart.
+
+* django-address: Would be nice to use to auto comple addresses
 
 
 

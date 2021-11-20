@@ -45,12 +45,12 @@ def all_cupboards(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             cupboards = cupboards.order_by(sortkey)
-            
+
         if 'type' in request.GET:
             types = request.GET['type'].split(',')
             cupboards = cupboards.filter(type__name__in=types)
             type = Type.objects.filter(name__in=types)[0]
-            
+
         print(type)
 
         if 'q' in request.GET:
@@ -59,7 +59,7 @@ def all_cupboards(request):
             if not query:
                 messages.error(request, "Please enter some search criteria.")
                 return redirect(reverse('cupboards'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             cupboards = cupboards.filter(queries)
 
@@ -74,11 +74,11 @@ def all_cupboards(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'cupboards/cupboards.html', context) 
+    return render(request, 'cupboards/cupboards.html', context)
 
 
 def cupboard_details(request, cupboard_id):
-    """ A view to show detailed cupdoard information and the user to select 
+    """ A view to show detailed cupdoard information and the user to select
     their specifications and receive a quote"""
 
     cupboard = get_object_or_404(Cupboard, pk=cupboard_id)
@@ -105,11 +105,14 @@ def cupboard_details(request, cupboard_id):
         'min_depth': min_depth
     }
 
-    return render(request, 'cupboards/cupboard_details.html', context) 
+    return render(request, 'cupboards/cupboard_details.html', context)
 
 
 def calculated_cupboard(request, cupboard_id):
-    """ A view to calculate the cost of a cupboard after the user has entered their required dimensions and number of shelves in the form on the product_details template, then return an updated template showing the cost for those dimensions (dimensions also rendered back to them)"""
+    """ A view to calculate the cost of a cupboard after the user has entered
+    their required dimensions and number of shelves in the form on the
+    product_details template, then return an updated template showing the cost
+    for those dimensions (dimensions also rendered back to them)"""
 
     cupboard = get_object_or_404(Cupboard, pk=cupboard_id)
 
@@ -124,17 +127,17 @@ def calculated_cupboard(request, cupboard_id):
         shelves = int(request.POST.get("shelves"))
 
     price_per_mm2 = float(material.price_per_m2)/1000000
-       
+
     """ Calculation.  Shelves are multiplied by 10 as there
     is a £10 cutting fee per shelf"""
 
     if type.name == "cupboard":
         area = (height*depth*2) + (height*width*2) + (width*depth*(2+shelves))
-           
+
 # or if shelving has not front
     else:
         area = (height*depth*2) + (height*width) + (width*depth*(2+shelves))
-            
+
     cost = (area * price_per_mm2) + float(cupboard.design_surcharge) +(shelves*10)
 
     if float(area/10000) <= 732:
@@ -145,8 +148,6 @@ def calculated_cupboard(request, cupboard_id):
         postage = 30.00
     if 2165 <= float(area/10000) <= 2880:
         postage = 40.00
-
-    print(postage)
 
     H = height
     D = depth
@@ -188,7 +189,8 @@ def calculated_cupboard(request, cupboard_id):
     return render(request, 'cupboards/calculated_cupboard.html', context)
 
 
-def cart_cupboard(request, cupboard_id, height, width, depth, shelves, price, postage):
+def cart_cupboard(request, cupboard_id, height, width,
+                  depth, shelves, price, postage):
 
     cupboard = get_object_or_404(Cupboard, pk=cupboard_id)
 
@@ -196,11 +198,10 @@ def cart_cupboard(request, cupboard_id, height, width, depth, shelves, price, po
 
     material = get_object_or_404(Material, pk=cupboard.material.id)
 
-
     H=height
     W = width
     D = depth
-    S = shelves 
+    S = shelves
     cost = price
     postage = postage
     code = f"{H}#{W}#{D}#{S}#{cost}#{postage}"
@@ -232,7 +233,8 @@ def cart_cupboard(request, cupboard_id, height, width, depth, shelves, price, po
         'min_height': min_height,
         'min_width': min_width,
         'min_depth': min_depth,
-        'postage': postage
+        'postage': postage,
+        'cart_cupboard': True
     }
 
     return render(request, 'cupboards/calculated_cupboard.html', context)
@@ -244,7 +246,7 @@ def add_design(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you are not authorised to do this.')
         return redirect(reverse('home'))
-   
+
     if request.method == 'POST':
         form = DesignForm(request.POST, request.FILES)
         if form.is_valid():
@@ -284,7 +286,8 @@ def add_material(request):
 
 
 def list_materials(request):
-    """ A view to show more detailed information about te materials available and a link for admin to edit materials in the database"""
+    """ A view to show more detailed information about te materials available \
+        and a link for admin to edit materials in the database"""
 
     materials = Material.objects.all()
     form = MaterialForm()
@@ -294,7 +297,7 @@ def list_materials(request):
         'form': form
     }
 
-    return render(request, 'cupboards/materials.html', context) 
+    return render(request, 'cupboards/materials.html', context)
 
 
 @login_required
@@ -370,16 +373,9 @@ def delete_material(request, material_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you are not authorised to do this.')
         return redirect(reverse('home'))
-        
+
     material = get_object_or_404(Material, pk=material_id)
     material.delete()
     messages.success(request, f'{material.display_name} deleted.')
 
     return redirect(reverse('materials'))
-
-
-# @login_required
-# def add_image(request):
-
-
-    
