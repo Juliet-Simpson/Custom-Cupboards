@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 
-from .models import Cupboard, Material, Type, Image
+from .models import Cupboard, Material, Type
 from .forms import DesignForm, MaterialForm
 
 # Create your views here.

@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Cupboard, Type, Material, Image
+from .models import Cupboard, Type, Material
 
 # Add a cupboard design
 class DesignForm(forms.ModelForm):

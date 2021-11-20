@@ -43,12 +43,3 @@ class Cupboard(models.Model):
     def __str__(self):
         return self.name 
 
-
-class Image(models.Model):
-    file_name = models.ImageField(null=True, blank=True)
-    cupboard = models.ForeignKey(Cupboard, on_delete=models.CASCADE)
-    main_image = models.BooleanField (null=False, blank=False, default=False)
-
-    def __str__(self):
-        return self.file_name.path
-
