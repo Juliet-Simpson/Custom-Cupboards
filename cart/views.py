@@ -15,7 +15,7 @@ def view_cart(request):
 
 def add_to_cart(request, cupboard_id, code):
     """ Add a quantity of the specified product to the shopping bag """
-    
+
     cupboard = get_object_or_404(Cupboard, pk=cupboard_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
@@ -26,7 +26,8 @@ def add_to_cart(request, cupboard_id, code):
             messages.success(request, f'Cart quantity updated!')
         else:
             cart[cupboard_id]['cupboards_by_code'][code] = quantity
-            messages.success(request, f"{quantity} {cupboard.name} added to cart.")
+            messages.success(request,
+                             f"{quantity} {cupboard.name} added to cart.")
     else:
         cart[cupboard_id] = {'cupboards_by_code': {code: quantity}}
         messages.success(request, f"{quantity} {cupboard.name} added to cart.")
@@ -46,8 +47,8 @@ def update_cart(request, item_id):
 
     if quantity > 0:
         cart[item_id]['cupboards_by_code'][code] = quantity
-        messages.success(request, 
-                            f'Cart quantity updated')
+        messages.success(request,
+                         f'Cart quantity updated')
     else:
         del cart[item_id]['cupboards_by_code'][code]
         if not cart[item_id]['cupboards_by_code']:
@@ -78,6 +79,3 @@ def remove_item(request, item_id):
     except Exception as e:
         messages.error(request, f'Error removing item: {e}.')
         return HttpResponse(status=500)
- 
-
-

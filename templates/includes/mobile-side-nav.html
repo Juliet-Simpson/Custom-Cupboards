@@ -4,20 +4,20 @@
     <ul class="navbar-nav mx-auto my-auto">
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mb-about-link">
                 About Us
             </a>
-            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="about-link">
+            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="mb-about-link">
                 <a href="{% url 'about' %}" class="dropdown-item pl-2 sn-hv">What we do</a>
                 <a href="{% url 'contact' %}" class="dropdown-item pl-2 sn-hv">Contact Us</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5 " href="#" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mb-designs-link">
                 Designs
             </a>
-            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="designs-link">
+            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="mb-designs-link">
                 <a href="{%url 'cupboards'%}?type=cupboard" class="dropdown-item pl-2 pt-0 sn-hv">Cupboards</a>
                 <a href="{%url 'cupboards'%}?type=shelving" class="dropdown-item pl-2 sn-hv">Shelving Units</a>
                 <a href="{%url 'cupboards'%}" class="dropdown-item sn-hv">All Designs</a>
@@ -28,10 +28,10 @@
         </li>
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#"  data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
+                aria-haspopup="true" aria-expanded="false" aria-labelledby="mb-info-link">
                 Info
             </a>
-            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="info-link">
+            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="mb-info-link">
                 <a href="{%url 'pricing'%}" class="dropdown-item sn-hv pl-2">Pricing</a>
                 <a href="{%url 'delivery'%}" class="dropdown-item sn-hv pl-2">Delivery</a>
                 <a href="{%url 'assembly'%}" class="dropdown-item sn-hv pl-2">Assembly</a>
@@ -41,10 +41,10 @@
         {% if request.user.is_superuser %}
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="mb-management-link">
                 Management
             </a>
-            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="management-link">
+            <div class="dropdown-menu red-theme-color border-0 pt-0" aria-labelledby="mb-management-link">
                 <a href="{% url 'add_design' %}" class="dropdown-item sn-hv pl-2">Add a Design</a>
                 <a href="{% url 'materials' %}" class="dropdown-item sn-hv pl-2">Manage Materials</a>
             </div>

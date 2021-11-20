@@ -13,6 +13,7 @@ from cart.contexts import cart_contents
 import stripe
 import json
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -59,7 +60,7 @@ def checkout(request):
             for item_id, item_data in cart.items():
                 try:
                     cupboard = Cupboard.objects.get(id=item_id)
-                   
+                
                     for code, quantity in item_data['cupboards_by_code'].items():
 
                         height = code.split('#')[0]
@@ -184,5 +185,4 @@ def checkout_success(request, order_number):
         'order': order,
     }
 
-    return render(request, template, context) 
-    
+    return render(request, template, context)
