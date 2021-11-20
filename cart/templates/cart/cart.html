@@ -52,7 +52,7 @@
                     <button
                         class="decrement-qty decrement-qty_{{ item.item_id }} btn plus-minus btn-sm my-auto light-theme-color rounded-0 align-middle"
                         data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                        <i class="fas fa-minus fa-sm"></i>
+                        <i class="fas fa-minus fa-sm" aria-hidden="true"></i><span class="sr-only">Minus</span></i>
                     </button>
                     <input id="quantity"
                         class="number-input id_qty_{{ item.item_id }} text-center align-middle qty_input" type="number"
@@ -61,18 +61,18 @@
                     <span> <button
                             class="increment-qty increment-qty_{{ item.item_id }} btn plus-minus btn-sm light-theme-color rounded-0 align-middle"
                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                            <i class="fas fa-plus fa-sm"></i>
+                            <i class="fas fa-plus fa-sm" aria-hidden="true"></i><span class="sr-only">Plus</span></i>
                         </button></span>
                     <span class="pl-2 pr-1">
                         <button type="submit" class="btn-link update-cart text-info d-md-none text-left border-0">
-                            <i class="fas fa-check fa-sm"></i> Update
+                            <i class="fas fa-check fa-sm" aria-hidden="true"></i><span class="sr-only">Check</span></i> Update
                         </button>
             </form>
             </span>
             <form class="d-md-none" method="POST" action="{% url 'remove_item' item.item_id %}">
                 {% csrf_token %}
                 <button type="submit" class="btn-link update-cart text-danger update-cart border-0">Remove
-                    <i class="fas fa-times fa-sm"></i>
+                    <i class="fas fa-times fa-sm" aria-hidden="true"></i><span class="sr-only">Times</span></i>
                 </button>
                 <input type="hidden" name="spec_code" value="{{ item.code }}">
             </form>
@@ -91,7 +91,7 @@
                 <button
                     class="decrement-qty decrement-qty_{{item.item_id}} btn plus-minus btn-sm light-theme-color rounded-0 align-middle"
                     data-item_id="{{ item.item_id }}">
-                    <i class="fas fa-minus fa-sm"></i>
+                    <i class="fas fa-minus fa-sm" aria-hidden="true"></i><span class="sr-only">Minus</span></i>
                 </button>
                 <input id="quantity" class="number-input id_qty_{{item.item_id}} text-center qty_input align-middle"
                     type="number" name="quantity" value="{{item.quantity}}" minlength="1" maxlength="5" min="1" max="99"
@@ -99,18 +99,18 @@
                 <button
                     class="increment-qty increment-qty_{{item.item_id}} btn plus-minus btn-sm light-theme-color rounded-0 align-middle"
                     data-item_id="{{ item.item_id }}">
-                    <i class="fas fa-plus fa-sm"></i>
+                    <i class="fas fa-plus fa-sm" aria-hidden="true"></i><span class="sr-only">Plus</span></i>
                 </button>
                 <input type="hidden" name="spec_code" value="{{ item.code }}">
             </div>
             <button type="submit" class="btn-link small-text update-cart text-info text-left border-0">
-                <i class="fas fa-check fa-sm"></i> Update
+                <i class="fas fa-check fa-sm" aria-hidden="true"></i><span class="sr-only">Check</span></i> Update
             </button>
         </form>
         <form method="POST" action="{% url 'remove_item' item.item_id %}">
             {% csrf_token %}
             <button type="submit" class="btn-link small-text update-cart text-danger update-cart border-0">Remove
-                <i class="fas fa-times fa-sm"></i>
+                <i class="fas fa-times fa-sm" aria-hidden="true"></i><span class="sr-only">Times</span></i>
             </button>
             <input type="hidden" name="spec_code" value="{{ item.code }}">
         </form>
@@ -131,7 +131,7 @@
             <a href="{% url 'checkout' %}" class="btn red-theme-color chkt-btn rounded-0 btn-lg">
                 <span class=>Secure Checkout</span>
                 <span class="icon">
-                    <i class="fas fa-lock fa-sm"></i>
+                    <i class="fas fa-lock fa-sm" aria-hidden="true"></i><span class="sr-only">Lock</span></i>
                 </span>
             </a>
         </div>

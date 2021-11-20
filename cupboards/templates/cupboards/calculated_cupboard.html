@@ -122,7 +122,7 @@
                                     class="decrement-qty btn plus-minus btn-sm light-theme-color rounded-0 decrement-qty_{{ item.item_id }} align-middle"
                                     data-item_id="{{ item.item_id }}">
                                     <span>
-                                        <i class="fas fa-minus fa-sm"></i>
+                                        <i class="fas fa-minus fa-sm" aria-hidden="true"></i><span class="sr-only">Minus</span></i>
                                     </span>
                                 </button>
                                 <input id="quantity"
@@ -132,7 +132,7 @@
                                     class="increment-qty increment-qty_{{ item.item_id }} btn plus-minus btn-sm light-theme-color rounded-0 align-middle"
                                     data-item_id="{{ item.item_id }}">
                                     <span>
-                                        <i class="fas fa-plus fa-sm"></i>
+                                        <i class="fas fa-plus fa-sm" aria-hidden="true"></i><span class="sr-only">Plus</span></i>
                                     </span>
                                 </button>
                             </div>

@@ -51,7 +51,8 @@
                         <a class="text-black nav-link my-auto p-0" href="#"  data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <i class="fas fa-search fa-lg p-2 pl-4"></i>
+                                <i class="fas fa-search fa-lg p-2 pl-4" 
+                                    aria-hidden="true"></i><span class="sr-only">Search</span></i>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0 w-100 p-3 ml-0 mt-1 rounded-0 my-0">
@@ -65,7 +66,8 @@
                                             class="form-control mob-search-btn btn red-theme-color border-0 border-black rounded-0"
                                             type="submit">
                                             <span class="icon">
-                                                <i class="fas fa-search"></i>
+                                                <i class="fas fa-search"
+                                                    aria-hidden="true"></i><span class="sr-only">Search</span></i>
                                             </span>
                                         </button>
                                     </div>
@@ -81,7 +83,8 @@
                         <a class="text-black nav-link p-0 pr-1" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <i class="fas fa-user fa-lg p-2"></i>
+                                <i class="fas fa-user fa-lg p-2" 
+                                    aria-hidden="true"></i><span class="sr-only">User</span></i>
                             </div>
                         </a>
                         <div class="dropdown-menu user-menu dropdown-menu-right text-right py-0 mt-1 border-0"
@@ -98,7 +101,8 @@
                     <li class="list-inline-item p-0">
                         <div class="text-center">
                             <button type="button" class="no-bg border-0 nav-link text-black p-0" onclick="cartPrev()">
-                                <i class="fas fa-shopping-cart  fa-lg p-2 pr-3"></i>
+                                <i class="fas fa-shopping-cart  fa-lg p-2 pr-3" 
+                                    aria-hidden="true"></i><span class="sr-only">User</span></i>
                                 {% if cart_items %}
                                 <span class="badge badge-pill badge-info text-center text-black">{{ count }}</span>
                                 {% endif %}
@@ -120,7 +124,7 @@
                     <button class="navbar-toggler my-auto pl-0" type="button" onclick="openNav()" data-toggle="collapse"
                         data-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
                         aria-label="Toggle navigation">
-                        <i class="fas fa-bars fa-lg text-black my-auto pl-1"></i>
+                        <i class="fas fa-bars fa-lg text-black my-auto pl-1"aria-hidden="true"></i><span class="sr-only">Bars</span></i>
                     </button>
                     {% include 'includes/mobile-top-header.html' %}
                     {% include 'includes/main-nav.html' %}
