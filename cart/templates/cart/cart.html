@@ -30,7 +30,6 @@
     <hr class="d-none d-md-block">
     {% for item in cart_items %}
     <div class="row">
-
         <div class="col-4 col-md-3">
             {% if item.cupboard.main_image %}
            <a href="{% url 'cart_cupboard' item.cupboard.id item.spec.height item.spec.width item.spec.depth item.spec.shelves item.price item.spec.postage %}"> <img class="img-fluid rounded" src="{{ item.cupboard.main_image.url }}" alt="{{ item.cupboard.name }}"></a>
@@ -38,7 +37,6 @@
             <a href="{% url 'cart_cupboard' item.cupboard.id item.spec.height item.spec.width item.spec.depth item.spec.shelves item.price item.spec.postage %}"><img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.cupboard.name }}"></a>
             {% endif %}
         </div>
-
         <div class="col-8 px-md-0 pl-lg-2 col-md-4 large-text pt-lg-4">
             <h5 class="my-0"><strong>{{ item.cupboard.name }}</strong></h5>
             <p class="my-1">H: {{ item.spec.height}} mm / W: {{ item.spec.width}} mm / D: {{ item.spec.depth}} mm
@@ -46,9 +44,6 @@
             <p class="my-0">Shelves: {{ item.spec.shelves}}</p>
             <h6 class="my-1 d-block d-md-none">Price: £{{ item.price }}</h6>
             <p class="my-0 small pb-2">Delivery each: £{{ item.spec.postage}}</p>
-
-            
-
             <form class="form d-block d-md-none update-form" method="POST"
                 action="{% url 'update_cart' item.item_id %}">
                 {% csrf_token %}
@@ -84,9 +79,7 @@
             <p><span class="my-0 d-block d-md-none pt-1 d-inline">In cart: {{item.quantity}}</span><span class="float-right d-inline">SUBTOTAL: £{{ item.subtotal}}</span></p>
             <input type="hidden" name="spec_code" value="{{ item.code }}">
         </div>
-
     </div>
-
     <div class="col-0 col-md-1 d-none pl-0 d-md-block text-center pt-1 pt-lg-4">
         <h5 class="my-0 text-center large-text">£{{ item.price }}</h5>
     </div>
@@ -152,11 +145,6 @@
     </div>
     {% endif %}
     <div class="col-12 pt-0 pb-3 text-center">
-        <!-- {% if cart_items %}
-        <a href="" class="text-black mr-3">
-            <h4 class="py-0">Empty cart</h4>
-        </a>
-        {% endif %} -->
         <a href="{%url 'cupboards'%}" class="ml-3 text-black">
             <h4>Back to designs</h4>
         </a>
