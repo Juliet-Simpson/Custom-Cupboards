@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
@@ -40,6 +39,7 @@
 
     {% block extra_js %}
     {% endblock %}
+    <title>Custom Cupboards{% block extra_title %}{% endblock %}</title>
 </head>
 
 <body id="main">
@@ -48,13 +48,13 @@
             <div class="col-9 col-lg-6 pl-0 pb-1 d-flex">
                 <ul class="pl-0 list-inline list-unstyled text-left my-auto my-0">
                     <li class="list-inline-item p-0">
-                        <a class="text-black nav-link my-auto p-0" href="#" id="mobile-search" data-toggle="dropdown"
+                        <a class="text-black nav-link my-auto p-0" href="#"  data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <i class="fas fa-search fa-lg p-2 pl-4"></i>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0 w-100 p-3 ml-0 mt-1 rounded-0 my-0" aria-labelledby="search">
+                        <div class="dropdown-menu border-0 w-100 p-3 ml-0 mt-1 rounded-0 my-0">
                             <form class="form" method="GET" action="{% url 'cupboards' %}">
                                 <div class="input-group  mob-srch-grp w-100">
                                     <input
@@ -78,7 +78,7 @@
             <div class="col-3 col-lg-6 p-0 pr-2 pb-1 my-auto text-right">
                 <ul class="list-inline list-unstyled text-right p-0 my-0">
                     <li class="list-inline-item dropdown p-0">
-                        <a class="text-black nav-link p-0 pr-1" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-black nav-link p-0 pr-1" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <i class="fas fa-user fa-lg p-2"></i>
@@ -102,8 +102,9 @@
                                 {% if cart_items %}
                                 <span class="badge badge-pill badge-info text-center text-black">{{ count }}</span>
                                 {% endif %}
+                            </button>
                         </div>
-                        </button>
+                       
                     </li>
                 </ul>
             </div>
@@ -196,7 +197,7 @@
                     </p>
                 </div>
                 <div class="col-12 text-center col-md-5 text-md-right offset-md-1">
-                    <p class="mb-0 mt-0">&copy Custom Cupboards 2021</p>
+                    <p class="mb-0 mt-0">&copy; Custom Cupboards 2021</p>
                     <p class="mb-0">Website by: Juliet Simpson</p>
                 </div>
                 <div
@@ -207,9 +208,8 @@
 
         </div>
     </footer>
-
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}
