@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
-                <p>Complete the form to add a cupboard design to the site.</p>
+                <p>Complete the form to add a design to the site.</p>
                 <form method="POST" action="{% url 'add_design' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}

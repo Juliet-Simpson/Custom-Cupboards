@@ -6,7 +6,7 @@
             <hr class="mt-0 mx-2">
         </div>
         {% if cart_items %}
-        <div class="col-12 mb-2">
+        <div class="col-12 mb-2 px-4">
             <div class="items-prev">
             <p class="px-2 mb-0">Order Summary ({{ count }})</p>
             <div class="row px-2">
@@ -19,7 +19,7 @@
             </div>
             {% for item in cart_items %}
             <div class="row px-2">
-                <div class="col-2 mb-1">
+                <div class="col-2 my-2">
                     <a href="">
                         {% if item.cupboard.main_image %}
                         <img class="w-100" src="{{ item.cupboard.main_image.url }}" alt="{{ cupboard.name }}">

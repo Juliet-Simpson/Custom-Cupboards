@@ -35,7 +35,7 @@
             {% if item.cupboard.main_image %}
            <a href="{% url 'cart_cupboard' item.cupboard.id item.spec.height item.spec.width item.spec.depth item.spec.shelves item.price item.spec.postage %}"> <img class="img-fluid rounded" src="{{ item.cupboard.main_image.url }}" alt="{{ item.cupboard.name }}"></a>
             {% else %}
-            <a href="{% url 'cart_cupboard' item.cupboard.id item.spec.height item.spec.width item.spec.depth item.spec.shelves item.price item.spec.postage %}"><img class="img-fluid rounded" src="../media/noimage.png" alt="{{ item.cupboard.name }}"></a>
+            <a href="{% url 'cart_cupboard' item.cupboard.id item.spec.height item.spec.width item.spec.depth item.spec.shelves item.price item.spec.postage %}"><img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.cupboard.name }}"></a>
             {% endif %}
         </div>
 
