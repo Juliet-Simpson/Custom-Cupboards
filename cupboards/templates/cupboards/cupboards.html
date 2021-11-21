@@ -89,8 +89,7 @@
                 <br>
                 <p class="pl-md-3"><strong>Select this {{cupboard.type.friendly_name | lower}} design and enter your
                         required dimensions on the next
-                        page to receive a quote.</strong></p>
-                        
+                        page to receive a quote.</strong></p> 
                 {% if request.user.is_superuser %}
                 <p class="text-center mx-0 d-block">
                     <a href="{% url 'edit_design' cupboard.id %}"

@@ -208,8 +208,7 @@ Loads the home page, about pages and info pages.  gives the user a welcoming lan
 
 Named 'cupboards' at the outset of the project, later sometimes referred to as 'designs' as designs would be a more logical name, given both cupboards and shelving units are available.  
 Contains models, views and forms for users and site owners to perform all functionality related to 'cupboards' (and shelving untits).  
-* Models
-    * Contains 3 models: Type, Material and Cupboard.  Type and Material are both foreign keys in the Cupboard Model. 
+* Contains 3 models: Type, Material and Cupboard.  Type and Material are both foreign keys in the Cupboard Model. 
 * Designs page, entitled so from a users perspective, infact cupboards.html, giving users a list of all designs with an image and information and the option to select this design to proceed further towards its purchase.  A view, 'cupboards' and url for rendering the template.
 * Filtering by type of the designs on cupbaords.html and sorting them by name, example price or material.  Functionality to do this within the 'cupboards' view.
 * Cupboard details page, cupboard_details.html, and view and url to render the template, where a user can find out more information about a selected design and enter their required dimensions and shelves to press calculated and receive a quote on the next page.
@@ -259,16 +258,35 @@ Contains all functionality for a user to make a purchase, set their delivery det
 At the end of this project there was not time do implement some hoped for features, large and small.  It is hoped in the future that they will be with the intention of making an actual business of this website.
 
 * Update dimensions of a cupbaord (or shelves) in the cart.  
-    * After the calculated cupboard page has been linked back to from the cart it would be nice to be able to send new dimensions back to the cart.  The functionality would be different from update quantity as the cupboard in the cart is defined by its dimensions so in effect changing them is actually completely replacing it.  It would probably be easies to add the new cupboard to the cart and remove the old.  The caveat is that the quantity of the originial must be conserved and applied to the new cupboard.
+    * After the calculated cupboard page has been linked back to from the cart be able to send new dimensions back to the cart.  The functionality would be different from update quantity as the cupboard in the cart is defined by its dimensions so in effect changing them is actually completely replacing it.  It would probably be easies to add the new cupboard to the cart and remove the old.  The caveat is that the quantity of the originial must be conserved and applied to the new cupboard.
 
-* django-address: Would be nice to use to auto comple addresses.
+* django-address: 
+    * Would be nice to use to auto comple addresses.
 
-* I feel the site is really lacking gallery images for each design.  These ideally would be displayed on a small filmstrip of thumbnails on the cupboard details page and could open in a carousel on a modal when clicked on.   It would require another model for images which would have the design an image was associated with as a foreign key.
-I was slightly put off starting this idea as I didn't know how to upload multiple objects without reloading the page.  I have since learned that there is a way using django formsets, details of which are in the django documentation.
-I was also ut off by how difficult it would be to edit images for a design, if that were to need to involve multiple custom widgets.  
-I would like to attempt this functionality but know I would need time to work on it.
+* Gallery Images:
+    * The site is lacking gallery images for each design.  These ideally would be displayed on a small filmstrip of thumbnails on the cupboard details page and could open in a carousel on a modal when clicked on.   It would require another model for images which would have the design an image was associated with as a foreign key.
+I was slightly put off starting this idea by not knowing how to upload multiple objects without reloading the page.  I have since learned that there is a way using django [formsets](https://docs.djangoproject.com/en/1.8/topics/forms/formsets/). 
+I was also put off by how difficult it would be to edit images for a design, if it needed to involve multiple custom widgets.  
+I would like to attempt this functionality but it would require time to work on it.
 
-* I would much like to customise the registration and login functionality, to have the option to cancel signout and redirect to the previous page.
+* Customise user account functionality:
+    * I would much like to customise the registration and login functionality, to have the option to cancel login and signout and to redirect to the previous page after any account account action has been performed.
+    * I would like to change the order of the fields on the signup form as I don't feel email is logically placed above username.
+
+* Example price calculator:
+    * The site is missing an example price calculator for superusers adding new designs.  At the moment it must be calculated externally and entered manually and is hence open to errors.  It would either need to open in a separate modal and the type, design surcharge and material cost/sqm entered manually, calculate a price using javascript and then enter this in the example price field using javascript.  This is still open to user error in entering the values, a better but more difficult way would be to use javascript until the type, material and design surcharge fields had been entered, pass the all materials price/sqm to the form with their names so that when a name was selected its price/spm could be retrieved in the front end and then used to calculate the example price which could then automatically fill the form field.  This would take some time to work out and implement.
+
+* A Contact Form:
+    * A contact form to send emails and receive an automated reply that a user's message has been successfully delivered would be an improvement to the site.
+
+* Reviews:
+    * A form for logged in users to leave reviews which could then be displayed on a page and also attached to their user profile would be a good addition.  This would not be too difficult to implement as was only ommitted for lack of time.
+
+* Other types in the types model:
+    * Other types would be possible in the model, for example, combination units, tables, beds and in places code exists to iterate through the types in the database and execute the current functionality.  However in others further coding would be needed, namely what the calculation should be for the cost -diffent for every type, and the existing types are named in the code for sorting functionality.
+
+* Out of stock field:
+    * If a material is currently unavailable it would be nice to be able to mark it as so and prevent it or designs made from it from being rendered, without having to delete the material completely and the. the designs associated with it being deleted by cascade also.
 
 
 ## Technologies
@@ -281,23 +299,30 @@ I would like to attempt this functionality but know I would need time to work on
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-- [Jinja](https://en.wikipedia.org/wiki/Jinja_%28template_engine%29)
-
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries and Tools 
 
-- [Django]
+- [Django](https://www.djangoproject.com/)
+    * Fullstack framework on which the project was built.
+
+- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/)
+    * Used for registration and login functionality.
+
+- [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+    * Used to dreate the responsive layout throughout the site. Navbar component used for the navigation and card content containers used throughout the site.
 
 - [jQuery](https://jquery.com/)
-    * Used for initializing Materialize components, validating the select elements and fading out the flashed messages.
+    * Used for various script elements throughout the project.
 
 - [Heroku](https://id.heroku.com/login)
     * Cloud platform used for deployment
 
+- [AWS S3 services](https://s3.console.aws.amazon.com/)
+    * Used for storing static and media folders and files contained within.
 
 - [Google Fonts:](https://fonts.google.com/)
-    * Used to import the 'Ubuntu' font used throughout the site.
+    * Linked to in the page head of the base template and used for the "Slabo+27" font used throughout the site.
 
 - [Git:](https://git-scm.com/)
     * Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
@@ -329,23 +354,37 @@ I would like to attempt this functionality but know I would need time to work on
 
 - [W3C HTML Validator](https://validator.w3.org/nu/#textarea): Validation by direct URL input:
     * Code passes through with no errors
-    * Only warnings are due to the use of either name attribute in form elements, (warned as being unnecessary but in fact needed for Python code) or sections lacking headings which are not desirable for this site.
+ or warnings.
 
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator): Used to validate the css code from all style.css by pasting the code into this page:
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator): Used to validate the css code from base.css by pasting the code into this page.
     * Passed with no errors or warnings.
 
 - [PEP8](http://pep8online.com/): Online python checking tool used to validate Python code:
-    * Code passed with no errors or warnings.
+    * Not all code passes but only errors are for lines too long in cases where breaking the line breaks the code functionality.
 
 - [Chrome Lighthouse Extension](https://developers.google.com/web/tools/lighthouse/): Used to audit the site:   
-    * Some improvements and changes were needed to improve lighthouse scores.  These are summarised in this table:
+    * After compression of images the following scores were obtained.  These are inhibited by the number of dependencies and external links required for this site slowing down performance.
 
 ### Manual Testing
+
+**Site functionality**
+
+* The deployed site was reviewed and tested for registraion, login, logout, calculating costs, adding to and updating the cart, making purchases, viewing and editing profile information and adding, editing and deleting designs and materials by various family memebers on desktop and mobile devices.
+    * No known bugs were found.
+    
 **Bugs and fixes**
 
+* Safari interpreted the phone number when dummy numbers as a link to call, making it appear blue on an iPhone7.  This looked unattractive and out of place so the phone number has been changed to incorporate # symbols to prevent this from happening.
+
+* The webhook event to send 'issuing_authorisation.request' was only permitted to be added to one end point.  During development this was the local server but after deployment it has been changed to the deployed heroku app.
+
+**Pending Issues**
+
+*  Search bar width:
+    * Due to the layout of the navbar the search icon needs to be in a different column to the card and user icons. Thus it is not full width.  The search bar dropdown must be contained in the same parent element as the toggler in order for the bootstrap javascrip to expand it.  Thus the search bar is aonly as wide as the column containing the icon.  If it is moved out there is a javascript error in the console.  This is not an issue on large screens and the half width column looks sufficiently neat.  However on small mobiles, although the column has a width of 9, the search bar is quite narrow and would look much better if it took up the entire screen width.
 
 **Functionality**
-1. All the features were tested on the following and were confirmed to be functioning correctly, following the bug fixes detailed above: 
+1. All the features were tested on the following and were confirmed to be functioning correctly: 
 
 * Browsers:
     * Google Chrome
@@ -358,32 +397,19 @@ I would like to attempt this functionality but know I would need time to work on
     * iPhone 7
     * Samsung S8
 
-* Other devices were tested through Google Chrome DevTools:
-    * Moto G4
-    * Galaxy S5
-    * Pixel 2
-    * Pixel 2 XL
-    * iPhone 5/SE 
-    * iPhone 6/7/8 
-    * iPhone 6/7/8 Plus
-    * iPhone X 
-    * iPad
-    * iPad Pro 
-    * Surface Duo 
-    * Galaxy Fold 
+* Other devices were tested through Google Chrome DevTools.
+ 
 
-* Responsiveness was tested on the following screen widths using DevTools (Sizes in px):
-    * 320 
-    * 375 
-    * 425 
-    * 768
-    * 1024
-    * 1440
-
-**Pending Issues**
+* Responsiveness was tested on all screen widths using DevTools (Sizes in px):
 
 
 ### User Stories
+
+### Further testing
+
+**Automated testing**
+
+* Lack of time has prevented devising and implementing automated tests which had been a hope.  I would particularly like to focus them on the user signup and user profile functionality and the saving of user information following an order. This can be harder to test manually if confirmation emails are slow to come through and because of the need to repeatedly delete users in the admin for lack of enough different email addresses to use for signup.
 
 
 ## Deployment
@@ -447,7 +473,8 @@ The site was deployed to Heroku following these steps:
 
 20. Wait a few minutes for the app to build and then the following message will appear.  Click 'View' to open the new app.
 
-### Deployment to Heroku
+
+### Local Deployment
 
 
 ## Credits
@@ -472,7 +499,7 @@ The site was deployed to Heroku following these steps:
 
 ### Images
 
-* Background Image
+* Background Images
 
     * https://www.pixelstalk.net/
 
