@@ -252,28 +252,23 @@ Contains all functionality for a user to make a purchase, set their delivery det
 
 * UserProfile model: Different to the users model handled by allauth but related to it, this app contains a model which saves a users delivery information, UserProfile.  User (from allauth) is a OneToOne field.
 
-* A profile page where a user may view and edit their default delivery information from the UserProfile model and view their order history.  Clicking on an order number links back to the checkout success page for that order showing the order confirmation details.  There wil be an info message confirming that an order was sent.
-
-
-
-
-
-
-
-
-
-
-
+* A profile page where a user may view and edit their default delivery information, including full name, from the UserProfile model and view their order history.  Clicking on an order number links back to the checkout success page for that order showing the order confirmation details.  There wil be an info message confirming that an order was sent. Their username and registered email is displayed but intentionally not editable.
 
 ### Left to implement
 
-* Update dimensions of an item in the cart.
+At the end of this project there was not time do implement some hoped for features, large and small.  It is hoped in the future that they will be with the intention of making an actual business of this website.
 
-* django-address: Would be nice to use to auto comple addresses
+* Update dimensions of a cupbaord (or shelves) in the cart.  
+    * After the calculated cupboard page has been linked back to from the cart it would be nice to be able to send new dimensions back to the cart.  The functionality would be different from update quantity as the cupboard in the cart is defined by its dimensions so in effect changing them is actually completely replacing it.  It would probably be easies to add the new cupboard to the cart and remove the old.  The caveat is that the quantity of the originial must be conserved and applied to the new cupboard.
 
+* django-address: Would be nice to use to auto comple addresses.
 
+* I feel the site is really lacking gallery images for each design.  These ideally would be displayed on a small filmstrip of thumbnails on the cupboard details page and could open in a carousel on a modal when clicked on.   It would require another model for images which would have the design an image was associated with as a foreign key.
+I was slightly put off starting this idea as I didn't know how to upload multiple objects without reloading the page.  I have since learned that there is a way using django formsets, details of which are in the django documentation.
+I was also ut off by how difficult it would be to edit images for a design, if that were to need to involve multiple custom widgets.  
+I would like to attempt this functionality but know I would need time to work on it.
 
-
+* I would much like to customise the registration and login functionality, to have the option to cancel signout and redirect to the previous page.
 
 
 ## Technologies
@@ -291,6 +286,8 @@ Contains all functionality for a user to make a purchase, set their delivery det
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries and Tools 
+
+- [Django]
 
 - [jQuery](https://jquery.com/)
     * Used for initializing Materialize components, validating the select elements and fading out the flashed messages.
@@ -318,7 +315,7 @@ Contains all functionality for a user to make a purchase, set their delivery det
     * Icons throughout the site.
 
 - [COMPRESS PNG:](https://compresspng.com/)
-    * Used to compress background image to improve loading time.
+    * Used to compress images to improve loading time.
 
 - [Balsamiq:](https://balsamiq.com/)
     * Creation of the wireframe mock ups.
