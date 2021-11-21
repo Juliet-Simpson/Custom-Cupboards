@@ -321,6 +321,9 @@ I would like to attempt this functionality but it would require time to work on 
 - [AWS S3 services](https://s3.console.aws.amazon.com/)
     * Used for storing static and media folders and files contained within.
 
+- [Postgres](https://www.postgresql.org/)
+    * Used to host the database for the deployed project.
+
 - [Google Fonts:](https://fonts.google.com/)
     * Linked to in the page head of the base template and used for the "Slabo+27" font used throughout the site.
 
@@ -484,85 +487,315 @@ I would like to attempt this functionality but it would require time to work on 
 
 ![User Storiesus19a](media/readme/userstories/us19a.png "User Stories19a")
 
+19. Adjust the quantity of individual items in my cart.
 
-![User Storiesus18us20](media/readme/userstories/usus18us20.png "User Storiesus18us20")
+![User Stories19](media/readme/userstories/us19.png "User Stories19")
 
+20.  View the total cost of my selected purchases.
 
+21. View my total to pay.
 
+![User Storiesus18us20](media/readme/userstories/us18us20.png "User Storiesus18us20")
 
+22. Easily enter my payment information.
 
+![User Stories22](media/readme/userstories/us22.png "User Stories22")
 
+23. Feel my payment information is safe and secure.
+
+![User Stories23](media/readme/userstories/us23.png "User Stories23")
+
+24. View an order confirmation after checkout
+
+![User Stories24](media/readme/userstories/us24.png "User Stories24")
+
+25. Receive an email confirmation after ordering.
+
+![User Stories25](media/readme/userstories/us25.png "User Stories25")
+
+26. Add a new design.
+
+![User Stories26](media/readme/userstories/us26.png "User Stories26")
+
+27. Add a new material.
+
+![User Stories27](media/readme/userstories/us27.png "User Stories27")
+
+28. Edit/update a design.
+
+![User Stories28a](media/readme/userstories/us28a.png "User Stories28a")
+
+29. Edit/delete a material.
+
+![User Stories29](media/readme/userstories/us29.png "User Stories29")
+
+30. Delete a design (screenshot also applies to 28).
+
+![User Storiesus28us30](media/readme/userstories/us28us30.png "User Storiesus28us30")
+
+31. Have an attractive online prescence encouraging users to buy.
+
+![User Stories31](media/readme/userstories/us31.png "User Stories31")
 
 ### Further testing
 
 **Automated testing**
 
-* Lack of time has prevented devising and implementing automated tests which had been a hope.  I would particularly like to focus them on the user signup and user profile functionality and the saving of user information following an order. This can be harder to test manually if confirmation emails are slow to come through and because of the need to repeatedly delete users in the admin for lack of enough different email addresses to use for signup.
+* Lack of time has prevented devising and implementing automated tests which had been  hoped for.  I would particularly like to focus them on the user signup and user profile functionality and the saving of user information following an order. This can be harder to test manually if confirmation emails are slow to come through and because of the need to repeatedly delete users in the admin for lack of enough different email addresses to use for signup.
 
 
 ## Deployment
 
 ### Deployment to Heroku:
 
-The site was deployed to Heroku following these steps:
+The site was deployed to [Heroku](https://www.heroku.com/) following these steps:
 
-1.  Open the workspace in Gitpod for Find-A-Bible-Quote from the Gitpod dashboard 
+1. Navigate to [heroku.com](https://www.heroku.com/) and logining in as I was already a registered user. Sign up and log in if you don't.
 
-2. In the terminal of the running workspace type (without quotes): "pip3 freeze --local > requirements.txt" then press enter.
+2. Create a new app by clicking 'New' and then select 'Create new app'.
+
+3. Give the app the name 'Custom-Cupboards' and select the region closest to me when prompted.
+
+4. On the resources tab provision a new Postgres database for this app and select the free plan for it.
+
+5. Open the workspace in Gitpod for Custom Cupboards from the [Gitpod](https://gitpod.io/projects) dashboard.
+
+6. In the terminal type pip3 install dj_database_url
+
+7. In the terminal type pip3 install psycopg2-binary
+
+8. Type pip3 freeze > requirements.txt in the terminal to freeze these requirements
+
+9. Open settings.py in the custom_cupboards app and at the top import dj_database_url
+
+10. Scroll down to the database setting and comment out the default configuration
+
+11. Replace the default key value with dj_database_url.parse()
+
+12. Navigate back to Heroku and open the settings tab, click reveal config vars then copy the DATABASE_URL value and return to settings.py and paste it into the .parse() parentheses.  Save the file.
+
+13. Run python3 manage.py migrate in the terminal to migrate the database to Postgres
+
+14. Import existing fixtures for types, materials and cupboards by typing in the terminal individually and pressing enter after each one, python3 manage.py loaddata types, python3 manage.py loaddata material, python3 manage.py loaddata cupboards
+
+15. Create a superuser for Postgres by typing python3 manage.py createsuperuser in the terminal, then adding username, email and password when prompted.
+
+16. Uncomment the original database settings in settings.py and delete the Heroku database config so that it doesn't end up in version control.
+
+17.  In settings.py create an if statement:
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+
+18. Set the DATABASE_URL, originally from Heroku, in the gitpod envionment variables for this project by going to the gitpod dashboard>settings>variables.
+
+19. Type pip3 install gunicorn in the terminal, this will act as the webserver.
+
+20. Freeze gunicorn into the requirements file by typing pip3 freeze > requirements.txt
+
+21. Create a Procfile by selecting New File in the gitpod workspace file explorer at the root level and then naming it Procfile.
+
+22.  In the Procfile write 
+```
+web: gunicorn custom_cupboards.wsgi:application
+```
+
+23. Disable collect static by typing in the terminal
+```
+heroku config:set DISABLE_COLLECTSTATIC=1
+```
+24. Add the hostname of this app to ALLOWED_HOSTS in settings.py and also add localhost so that the project will still run from gitpod.
+```
+ALLOWED_HOSTS = ['custom-cupboards.herokuapp.com', 'localhost']
+```
+
+25. Commit and push to github by typing in the terminal:
+```
+git add .
+git commit -m "suitable message"
+git push
+```
+26. Then push to Heroku by initializing the git remote by typing
+```
+heroku git:remote -a custom-cupboards
+```
+Then type 
+```
+git push heroku main
+```
+
+27. Go to this app in Heroku and on the deploy tab set it to connect to github.
+Search for the custom-cupboards repository and then click connect. Next enable automatic deploys by clicking the button to do so.
+
+28. Go to settings.py and delete the SECRET_KEY setting.
+
+29. Use an online [django secret key generator](https://djecrety.ir/) to generate a new secret key.  Ad this value to a new config variable SECRET_KEY in Heroku.
+
+30. Generate another and add it to the gitpod environment variables and with DATABASE_URL
+
+31.  Go back to settings.py and replace the secret key setting with a call to get it from the environment
+and use an empty string as a default.
+```
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
+```
+
+32. Set debug to be true only if there's a variable called development in the environment
+```
+DEBUG = 'DEVELOPMENT' in os.environ
+```
+33. Commit these changes to github as before.
+
+34. Navigate to Heroku and check that ther is a build in process by clicking on the Activity tab.
+
+35. Navigate to aws.amazon.com nd click on create an AWS account.  Fill in email and a password, choose a username and select continue.
+
+36. On the account type page, select personal and fill out the required information, click create account and continue. Enter a credit card number which will be used for billing
+if going above the free usage limits but this won't go anywhere near them.
+
+37. Answer the further verification questions and click confirm to create account.
+
+38. Search for the S3 service then open it and create a new bucket.  Call it Custom Cupboards and select the region closest to you.
+
+39. Uncheck block all public access and acknowledge that the bucket will be public.
+
+40. Click create bucket.
+
+41. Set a few basic settings on the new bucket: on the properties tab turn on static website hosting, which will give a new endpoint to access it from the internet. for the index and error document,  just fill in some default values, index.html and error.html as they won't be used. Click save.
+
+42. On the permissions tab, firstly paste in this coors configuration:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+43. Next,go to the bucket policy tab and select, policy generator the policy type is going to be an S3 bucket policy. For principals allow by entering a star. The action will be, get object.
+
+44. Copy the ARN from the other tab and paste it into the ARN box on this one at the bottom. Click Add statement, then generate policy. Copy this policy into the bucket policy editor.
+Before clicking Save, add a slash star here onto the end of the resource key. Then click Save.
+
+45. Go to the access control list tab and set the list objects permission for everyone under the Public Access section.
+
+46. go back to the services menu and open Iam. Click groups then create a new group called manage-custom-cupboards. Click next step, next step again and finally, create group.
+
+47. Create the policy used to access the bucket by clicking policies and then create policy go to the JSON tab and then select import managed policy. Search for s3 and then import the s3 full access policy.
+
+48. Get the bucket ARN from the bucket policy page in s3 and paste that in here.
+
+49. Click review policy, give it a name and a description and then click create policy.
+
+50. Back on the policies page the policy has been created. Attach itto the group previously created. Go to groups, click my manage custom-cupboards-group and click attach policy.
+
+51. On the user's page click add user, create a user named custom-cupboards-staticfiles-user and give them programmatic access. Then select next.
+
+52. On the Add User to Group page, check the box next to manage-custom-cupboards then click next. Continue clicking next until the option to create user then click that.
+
+53. Download the CSV file which will contain this users access key and secret access key and very importanty save it.
+
+54. Back in gitpod install django-storages and boto3 by typing:
+```
+pip3 install django-storages
+```
+and
+```
+pip3 install boto3
+```
+in the terminal.  Freeze both of these into requirements.txt:
+```
+pip3 freeze > requirements.txt
+```
+
+54. Add 'storages', to INSTALLED_APPS in settings.py
+
+55. add an if statement to check if there's an environment variable called USE_AWS in the environment.
+If so define the AWS_STORAGE_BUCKET_NAME, the AWS_S3_REGION_NAME and our access key, and secret access key, which will come from the environment.
+```
+if 'USE_AWS' in os.environ:
+    
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'custom-cubpboards'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+```
+
+56. Go to Heroku and add our AWS keys to the config variables. Add a key called USE_AWS and set to true.
+
+57. Remove the disable collectstatic variable.
+
+58. In settings.py add:
+```
+ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+ ```
+ to the bucket config.
+
+ 59. At the root level in the file structure create a file called custom_storages.py
+
+60. Add the code:
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
 
 
-3.  Then type in the terminal: "echo web: python app.py > Procfile" and press enter
-
-  
-
-4. Open the Procfile and the delete blank line at the end
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
 
 
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+61. Test this functionality by adding, committing and pushing these changes to github, triggering and automatic deployment on Heroku.
 
-5. Navigate to [Heroku](https://id.heroku.com/login) and login
+62. Check the build logs under the activity panel on Heroku to see that all the static files were collected correctly.
 
-  
-
-6. In the Heroku dashboard click the New button in the top right corner, then select 'Create New App'
-
-
-7. Enter the name 'Custom-Cupboards' for App Name and select the region as Europe
-
-
-8. On the next page in the section 'Deploy' select 'Connect to GitHub' as the Deployment method
+63. Go to Amazon S3 and check that there is a static folder in the bucket with all static files in it.
 
 
-9. Then type the name of this GitHub repository ('find-a-bible-quote') in the search box to locate it
 
-10. Once the repository is located, click the connect button on the right to connect to it
+<!--  -->
 
-
-11. Click on the Settings tab for the app
-
-
-12. Then click 'Reveal Config Vars'
-
-
-13. Manually enter the following config vars shown in the screenshot below, taking care not to add any quotes to the keys or values.  The SECRET_KEY must be copied over from the env.py file in the workspace.  The MONGO_URI is currently left blank
-
-14. Go back to the workspace terminal and type 'git status' to confirm that requirements.txt and Procfile are the only 2 new files.  
-
-15. Type "git add ." to add these new files to the staging area. 
-
-16. Type "git commit -m "Add requirements.txt and Procfile" and press enter to commit those files to the repository. 
-
-17. Then type "git push" to push these files to GitHub
-
-
-18. Go back to Heroku and under the Deploy tab click 'Enable Automatic Deploys'. The project's only branch is 'main' so this will be selected.
-
-
-19. Then for Manual deploy click 'Deploy Branch', again 'main' will be selected
-
-20. Wait a few minutes for the app to build and then the following message will appear.  Click 'View' to open the new app.
 
 
 ### Local Deployment
+
+1. Log into GitHub and locate the repository Juliet-Simpson/custom-cupboards.
+
+2. Select the clone dropdown and then click the clipboard icon to copy the link. Copy clone link.
+
+3. Type git clone and then paste this link into the terminal of your chosen editor and press enter: 
+```
+git clone https://github.com/Juliet-Simpson/custom-cupboards.git
+```
+
+4. To cut ties with this GitHub repository, type into the terminal: 
+```
+git remote rm origin 
+```
+
+5. Run the project by typing:
+```
+python3 manage.py runserver
+``` 
 
 
 ## Credits
