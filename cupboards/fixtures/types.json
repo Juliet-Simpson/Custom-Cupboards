@@ -1,0 +1,18 @@
+[
+    {
+        "pk": 1,
+        "model": "cupboards.type",
+        "fields": {
+            "name": "cupboard",
+            "friendly_name": "Cupboard"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "cupboards.type",
+        "fields": {
+            "name": "shelving",
+            "friendly_name": "Shelving Unit"
+        }
+    }
+]

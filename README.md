@@ -371,7 +371,7 @@ I would like to attempt this functionality but it would require time to work on 
 
 * The deployed site was reviewed and tested for registraion, login, logout, calculating costs, adding to and updating the cart, making purchases, viewing and editing profile information and adding, editing and deleting designs and materials by various family memebers on desktop and mobile devices.
     * No known bugs were found.
-    
+
 **Bugs and fixes**
 
 * Safari interpreted the phone number when dummy numbers as a link to call, making it appear blue on an iPhone7.  This looked unattractive and out of place so the phone number has been changed to incorporate # symbols to prevent this from happening.
@@ -404,6 +404,94 @@ I would like to attempt this functionality but it would require time to work on 
 
 
 ### User Stories
+
+**The numbered user stories in the UX section above are satisfied by the site, as demonstrated by the following screenshots:**
+
+1. View all available designs.
+
+![User Stories1](media/readme/userstories/us1.png "User Stories1")
+![User Stories1a](media/readme/userstories/us1a.png "User Stories1a")
+
+2. View all designs of a selected type.
+
+![User Stories2](media/readme/userstories/us2.png "User Stories2")
+
+3. Sort designs by name.
+
+![User Stories3](media/readme/userstories/us3.png "User Stories3")
+
+4. Sort designs by price.
+
+![User Stories4](media/readme/userstories/us4.png "User Stories4")
+
+5. Sort designs by material.
+
+![User Stories5](media/readme/userstories/us5.png "User Stories5")
+
+6. Enter my required dimensions and shelves.
+
+![User Stories6](media/readme/userstories/us6.png "User Stories6")
+
+7. View the price of my chosen design with my selected dimensions and number of shelves.
+
+![User Stories7](media/readme/userstories/us7.png "User Stories7")
+
+8. Change my dimensions and/or shelves for my selected design and recalculate the cost.
+
+![User Stories8](media/readme/userstories/us8.png "User Stories8")
+
+9. View the cost of shipping my chosen design with my selected dimensions and number of shelves.
+
+![User Stories9](media/readme/userstories/us9.png "User Stories9")
+
+10. Select 1 or more chosen designs with selected dimensions and number of shelves for purchase.
+
+![User Stories10](media/readme/userstories/us10.png "User Stories10")
+
+11. Register for an account.
+
+![User Stories11](media/readme/userstories/us11.png "User Stories11")
+
+12. Easily login or logout.
+
+![User Stories12a](media/readme/userstories/us12a.png "User Stories12a")
+
+![User Stories12b](media/readme/userstories/us12b.png "User Stories12b")
+
+13. Easily reset my password if I forget it.
+
+![User Stories13](media/readme/userstories/us13.png "User Stories13")
+
+14. Receive a confirmation email after registering
+
+![User Stories14](media/readme/userstories/us14.png "User Stories14")
+
+15. Have a personalised user profile.
+
+![User Stories15](media/readme/userstories/us15.png "User Stories15")
+
+16. Change my saved delivery information.
+
+![User Stories16](media/readme/userstories/us16.png "User Stories16")
+
+17. Easily select quantity to purchase.
+
+![User Stories17](media/readme/userstories/us17.png "User Stories17")
+
+18.  View items in my shopping cart to be purchased.
+
+![User Stories18](media/readme/userstories/us18.png "User Stories18")
+
+![User Storiesus19a](media/readme/userstories/us19a.png "User Stories19a")
+
+
+![User Storiesus18us20](media/readme/userstories/usus18us20.png "User Storiesus18us20")
+
+
+
+
+
+
 
 ### Further testing
 
