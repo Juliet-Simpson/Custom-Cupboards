@@ -229,7 +229,36 @@ For superusers:
 
 **Cart**
 
-Caonatins all functionality related to the shopping cart, adding to, updating and removing from it.  
+Contains all functionality related to the shopping cart, adding to, updating and removing from it. 
+
+* Cart page, cart.html and a view and url to render it.  Shows the item and quantity in the cart and the quantity input selectors to alter the quantity. 
+* View to add an item to the cart, which is stored in the current session.
+* View to update the session cart if update is clicked after altering the quantity input selector.
+* View to delete an item from the cart if remove is clicked next to an item in the cart.
+* A context processor, contexts.py which creates an object cart_items, giving the design, dimensions, cost, delivery,quantity and total product count in the cart.
+
+**Checkout**
+
+Contains all functionality for a user to make a purchase, set their delivery details, log the order in the database and send a confirmation email to the purchaser.
+* Checkout page, checkout.html, where a user enters their delivery and payment information and if the form is valid submits the payment intent to Stripe.
+* An Order Confirmation page, checkout_success.html which is rendered it the payment_intent_successful webhook is received from stripe.  The template shows all the relevant details associated with the order.  
+* An Order model which saves the order number, user_profile from the UserProfile model as a foreign key, the date, grand total, delivery cost, address fields and the full name and email associated with the order, (not neccessarily the same email as saved in the user model associated with this username) the contents of the cat that was putchased (cart_items object) and the stripe_pid for the purchase.
+* An OrderLineItem model which saves each design of specific dimensions and shelves and in what quantity it was purchased, with the order from the Order model it is associated with as a foreign key, its price, delivery cost and 'lineitem_total', the price multiplied by the quantity.
+* A view in the webhook_handler to handle payment intent succeded which sends a confirmation email to the email address on the order form.
+* text files are contained in a file confirmation_emails in the templates folder which contain the text to be included in a confirmation email.
+* A checkout success view in views.py which, amongst other things, saves the users prifile information to the UserProfile model, if they are logged in and have selected the checkbox to do so.
+
+**Profiles**
+
+* UserProfile model: Different to the users model handled by allauth but related to it, this app contains a model which saves a users delivery information, UserProfile.  User (from allauth) is a OneToOne field.
+
+* A profile page where a user may view and edit their default delivery information from the UserProfile model and view their order history.  Clicking on an order number links back to the checkout success page for that order showing the order confirmation details.  There wil be an info message confirming that an order was sent.
+
+
+
+
+
+
 
 
 

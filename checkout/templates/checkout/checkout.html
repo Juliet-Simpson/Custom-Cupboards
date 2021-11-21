@@ -87,8 +87,8 @@
                             checked>
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
-                            <a class="text-info" href="">Login</a> or
-                            <a class="text-info" href="">register</a> to save this information for future orders.
+                            <a class="text-info" href="{% url 'account_login' %}">Login</a> or
+                            <a class="text-info" href="{% url 'account_signup' %}">register</a> to save this information for future orders.
                         </label>
                         {% endif %}
                     </div>

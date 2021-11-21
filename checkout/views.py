@@ -160,13 +160,14 @@ def checkout_success(request, order_number):
         # Save the user's info
         if save_info:
             profile_data = {
+                'default_name': order.full_name.capitalize(),
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
-                'default_postcode': order.postcode,
-                'default_town_or_city': order.town_or_city,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
-                'default_county': order.county,
+                'default_postcode': order.postcode.upper(),
+                'default_town_or_city': order.town_or_city.capitalize(),
+                'default_street_address1': order.street_address1.capitalize(),
+                'default_street_address2': order.street_address2.capitalize(),
+                'default_county': order.county.capitalize(),
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
