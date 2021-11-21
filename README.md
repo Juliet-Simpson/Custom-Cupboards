@@ -6,7 +6,7 @@ Made for Code Institute's Fullstack Software Development Diploma Milestone 4 pro
 
 A fictional e-commerce website, built on the Django framework, supplying made-to-measure cupboards and shelving units.  
 
-Users have the oportunity to select a design, enter their desired dimensions and shelves and receive an on the spot quote to buy that unit and have it delivered to them.  They can then opt to add it to a shopping cart and proceed to checkout and purchase it if they wish.  
+Users have the opportunity to select a design, enter their desired dimensions and shelves and receive an on the spot quote to buy that unit and have it delivered to them.  They can then opt to add it to a shopping cart and proceed to checkout and purchase it if they wish.  
 
 A payment system exists using Stripe in test mode which takes mock payments.  Purchasers then receive a confirmation email for their purchase.  
 
@@ -38,13 +38,13 @@ To create a website that meets the needs of the user stories and has potential t
 Features to include:
 * A navbar, collapsible for small screens
 
-* Functionality to search for a design by search term apprearing in the name or description.
+* Functionality to search for a design by search term appearing in the name or description.
 
 * Functionality to browse through designs, filter them by type and sort them by name, price or material.
 
 * Custom cost calculator enabling users to select a design then enter their own dimensions and shelves to receive a quote for the cost and the postage.
 
-* Functioality to alter their chosen dimensions and recalculate the cost and postage.
+* Functionality to alter their chosen dimensions and recalculate the cost and postage.
 
 * Cart functionality where users can group together their selections for purchase, view the total cost of items and the total postage cost and alter the quantity of items for purchase.  While it is likely that most users will be only purchasing these items one at a time, there is functionality for purchasing multiple at one time if they wish. 
 
@@ -71,17 +71,17 @@ Features to include:
 
 * The home page will give users an overall impression of the site, an introduction to what is available and a large call to action button inviting them to view all available designs.  In addition check icons indicating that they can buy online, payments are secure, purchases are guaranteed and products are handmade in the UK.
 
-* The designs page will list the designs in the database. There will be a photo of each design, it's name, description, example price calculated for standard dimensions and given for price comparison between designs aand a large button to select this design. Users will have the option to filter the designs by type and sort them by name, price or material.  As it may be a long page there is a link at the bottom to return to the top of the page.
+* The designs page will list the designs in the database. There will be a photo of each design, it's name, description, example price calculated for standard dimensions and given for price comparison between designs and a large button to select this design. Users will have the option to filter the designs by type and sort them by name, price or material.  As it may be a long page there is a link at the bottom to return to the top of the page.
 
 * For users logged in as superusers there will be additional buttons with each design to edit or delete that design.  The edit button will lead to a separate page with a form preloaded with the field values in the database for that design where they can be edited and a button to save the new values.  It will also show a small image preview of the current image for the design which can be updated.
 
 * The designs page will lead to a details page for each design with a form for users to enter their desired dimensions and shelves and then request a cost calculation.
 
-* After requesting a cost calculation users will see a page almost indistingushable from the details page but for the fact that the 'Calculate Price" button will now read 'Recalculate' and instead of being invited to 'Enter' their required dimensions they are invited to 'Update' them.  Plus additionally there will be a section at the bottom showing their calculated cost, the postage for that unit, a quantity selector and an 'Add to Cart' button.
+* After requesting a cost calculation users will see a page almost indistinguishable from the details page but for the fact that the 'Calculate Price" button will now read 'Recalculate' and instead of being invited to 'Enter' their required dimensions they are invited to 'Update' them.  Plus additionally there will be a section at the bottom showing their calculated cost, the postage for that unit, a quantity selector and an 'Add to Cart' button.
 
 * The Cart page will show all the units of particular dimensions, shelves and design that have been selected for purchase and in what quantity.  Also the postage per item and the subtotal of that quantity of that item.
-here will be the option to alter the quantity, delete the item altogether or retun to the calculation page where they can recalculate the cost with different dimensions.   There not yet exists the option to alter the dimensions of that item: currently the unit with new dimensions needs to be also added and the previous one deleted. 
-The total cost for items, the total postage cost and the grand total sum of those will be clearly shown in a box unter the list of items in the cart.
+here will be the option to alter the quantity, delete the item altogether or return to the calculation page where they can recalculate the cost with different dimensions.   There not yet exists the option to alter the dimensions of that item: currently the unit with new dimensions needs to be also added and the previous one deleted. 
+The total cost for items, the total postage cost and the grand total sum of those will be clearly shown in a box under the list of items in the cart.
 There will be a large button to proceed to secure checkout plus a link at the bottom of the page to return to the designs page.
 The checkout page requires all form fields for delivery and payment to be correctly entered and then there is a final small alert of what their card will be charged before they press complete order.  Alternatively they have a button to 'Adjust Cart' which leads back to the cart page.
 There will also be a cart summary section on this page.
@@ -95,15 +95,15 @@ These will all be the same in structure as the about links and very look very si
 
 * For users logged in as superusers there will be an additional nav link with drop down options to Add a Design or go to a Materials page.  
 
-* The Add Design page will enable users to fillout a form, giving all the required field values to add a design to the store database, a link to upload an image for the design, a button to submit the form and a button to cancel if they change their mind.  
+* The Add Design page will enable users to fill out a form, giving all the required field values to add a design to the store database, a link to upload an image for the design, a button to submit the form and a button to cancel if they change their mind.  
 
-* The materials page will show a list of the materials currently available and their costs per sqm with buttons to either edit the material or delete the material.  Therw will also be a form to add a new material, with inputs for the required field values and a submit button.
+* The materials page will show a list of the materials currently available and their costs per sqm with buttons to either edit the material or delete the material.  There will also be a form to add a new material, with inputs for the required field values and a submit button.
 
 * The edit material button will lead to a separate page with a form similar to the add a material button but preloaded with the current values for that material which are editable.
 
-* There will be a reponsive footer at the bottom of the content on every page giving quick links to Designs, Delivery and Returns pages (likely to be the most essential information), social media links to Facebook and Youtube, business contact details, copyright information, website by and a trust seal image provided by Stripe, guaranteeing secure payments.
+* There will be a responsive footer at the bottom of the content on every page giving quick links to Designs, Delivery and Returns pages (likely to be the most essential information), social media links to Facebook and Youtube, business contact details, copyright information, website by and a trust seal image provided by Stripe, guaranteeing secure payments.
 
-* For any user interaction with the site, toast messages appear informing a user of the outcome of their action.  These appear with the screen overlayed with a semi transparent grey background and in the center of the screen with different colours for Success (green), Error (red), Warning (yellow) and Info (blue).   The warning message is infact only used when a super user is about to delete a design or material and incorporates a button to either confirm delete or cancel.
+* For any user interaction with the site, toast messages appear informing a user of the outcome of their action.  These appear with the screen overlayed with a semi transparent grey background and in the center of the screen with different colours for Success (green), Error (red), Warning (yellow) and Info (blue).   The warning message is in fact only used when a super user is about to delete a design or material and incorporates a button to either confirm delete or cancel.
 
 ### **Skeleton**
 
@@ -137,7 +137,7 @@ The wireframes can be viewed here:
 ### **Surface**
 
 * Colours:
-    * Two main theme colours have been used' 'light-theme-color' (rgb(202, 200, 200)) and 'red-theme-color' (rgb(168, 153, 153)).  These were chosen to be neutal and unobtrusive yet stylish and attractive, indicating the same promised of the cupboards.  Both colours have a slight reddish undertone intended to give some warmth and be reminiscent of the wamrth of natural wood.
+    * Two main theme colours have been used' 'light-theme-color' (rgb(202, 200, 200)) and 'red-theme-color' (rgb(168, 153, 153)).  These were chosen to be neutral and unobtrusive yet stylish and attractive, indicating the same promised of the cupboards.  Both colours have a slight reddish undertone intended to give some warmth and be reminiscent of natural wood.
     
 * Background:
     * Either a white background for commerce pages or a grey background for login and registration pages and for superuser management pages is used.  
@@ -150,13 +150,13 @@ The wireframes can be viewed here:
     * Muted grey text has been used to show the filtering and search results at the top left of the designs page in order to be unobtrusive.
 
 * Design:
-    * The theme is of sharp corners through out with a border radius of zero to give an impression of accurate wood cutting.  Page titles are centered and content endevours to all be neatly aligned.
+    * The theme is of sharp corners through out with a border radius of zero to give an impression of accurate wood cutting.  Page titles are centered and content endeavours to all be neatly aligned.
 
 * Layout:
     * Use has been made throughout of bootstrap cards which give neatly divided groups of content and can be accurately positioned.  They again have used the theme of zero border radius and lend themselves to background colors incorporating the theme colours.  Cards are either centered or in 2 columns on larger screens.
 
 * Background images:
-    * The homepage image is chosen because it features different cupboard doors, a good representation of the service offered by the site.  These are neatly and accurately vertically arranged, in line with the rest of the site's theme of neatness and accuracy.  One of the lower doors of the image has a lit panel which blends well with the transparent orange background of the card incorporating the checked statements.  It also hopes to give na impression of inviting users into the site.
+    * The homepage image is chosen because it features different cupboard doors, a good representation of the service offered by the site.  These are neatly and accurately vertically arranged, in line with the rest of the site's theme of neatness and accuracy.  One of the lower doors of the image has a lit panel which blends well with the transparent orange background of the card incorporating the checked statements.  It also hopes to give an impression of inviting users into the site.
     * The about page background shows an image of a human hand measuring a piece of wood, a good representation of what the business does and hopes to add some life to the impression.  It is light in colour in order to be unobtrusive.
     * The Info pages background is of a muted diagram of the fixings that might come with a cupboard.  This is to give the idea of the workings of the business and be especially relevant to the assembly page.  The black of the diagram has been muted to grey in order to not interfere with page content.
 
@@ -184,7 +184,7 @@ Contains a base template, base.html for the allauth templates and files with the
 
 * CSS folder
 
-Cntains base.css which holds the css styling for all templates.
+Contains base.css which holds the css styling for all templates.
 
 **Root level media folder**
 
@@ -207,9 +207,9 @@ Loads the home page, about pages and info pages.  gives the user a welcoming lan
 **Cupboards**
 
 Named 'cupboards' at the outset of the project, later sometimes referred to as 'designs' as designs would be a more logical name, given both cupboards and shelving units are available.  
-Contains models, views and forms for users and site owners to perform all functionality related to 'cupboards' (and shelving untits).  
+Contains models, views and forms for users and site owners to perform all functionality related to 'cupboards' (and shelving units).  
 * Contains 3 models: Type, Material and Cupboard.  Type and Material are both foreign keys in the Cupboard Model. 
-* Designs page, entitled so from a users perspective, infact cupboards.html, giving users a list of all designs with an image and information and the option to select this design to proceed further towards its purchase.  A view, 'cupboards' and url for rendering the template.
+* Designs page, entitled so from a users perspective, in fact cupboards.html, giving users a list of all designs with an image and information and the option to select this design to proceed further towards its purchase.  A view, 'cupboards' and url for rendering the template.
 * Filtering by type of the designs on cupbaords.html and sorting them by name, example price or material.  Functionality to do this within the 'cupboards' view.
 * Cupboard details page, cupboard_details.html, and view and url to render the template, where a user can find out more information about a selected design and enter their required dimensions and shelves to press calculated and receive a quote on the next page.
 * Calculated Cupboard page, calculated_cupboard.html, showing the cost calculation result and postage cost for the users selected design, dimensions and shelves and option to recalculate this or add it to the cart. A view which performs the calculation and renders the page and associated url.
@@ -234,16 +234,16 @@ Contains all functionality related to the shopping cart, adding to, updating and
 * View to add an item to the cart, which is stored in the current session.
 * View to update the session cart if update is clicked after altering the quantity input selector.
 * View to delete an item from the cart if remove is clicked next to an item in the cart.
-* A context processor, contexts.py which creates an object cart_items, giving the design, dimensions, cost, delivery,quantity and total product count in the cart.
+* A context processor, contexts.py which creates an object cart_items, giving the design, dimensions, cost, delivery, quantity and total product count in the cart.
 
 **Checkout**
 
 Contains all functionality for a user to make a purchase, set their delivery details, log the order in the database and send a confirmation email to the purchaser.
 * Checkout page, checkout.html, where a user enters their delivery and payment information and if the form is valid submits the payment intent to Stripe.
 * An Order Confirmation page, checkout_success.html which is rendered it the payment_intent_successful webhook is received from stripe.  The template shows all the relevant details associated with the order.  
-* An Order model which saves the order number, user_profile from the UserProfile model as a foreign key, the date, grand total, delivery cost, address fields and the full name and email associated with the order, (not neccessarily the same email as saved in the user model associated with this username) the contents of the cat that was putchased (cart_items object) and the stripe_pid for the purchase.
+* An Order model which saves the order number, user_profile from the UserProfile model as a foreign key, the date, grand total, delivery cost, address fields and the full name and email associated with the order, (not necessarily the same email as saved in the user model associated with this username) the contents of the cat that was purchased (cart_items object) and the stripe_pid for the purchase.
 * An OrderLineItem model which saves each design of specific dimensions and shelves and in what quantity it was purchased, with the order from the Order model it is associated with as a foreign key, its price, delivery cost and 'lineitem_total', the price multiplied by the quantity.
-* A view in the webhook_handler to handle payment intent succeded which sends a confirmation email to the email address on the order form.
+* A view in the webhook_handler to handle payment intent succeeded which sends a confirmation email to the email address on the order form.
 * text files are contained in a file confirmation_emails in the templates folder which contain the text to be included in a confirmation email.
 * A checkout success view in views.py which, amongst other things, saves the users prifile information to the UserProfile model, if they are logged in and have selected the checkbox to do so.
 
@@ -251,17 +251,17 @@ Contains all functionality for a user to make a purchase, set their delivery det
 
 * UserProfile model: Different to the users model handled by allauth but related to it, this app contains a model which saves a users delivery information, UserProfile.  User (from allauth) is a OneToOne field.
 
-* A profile page where a user may view and edit their default delivery information, including full name, from the UserProfile model and view their order history.  Clicking on an order number links back to the checkout success page for that order showing the order confirmation details.  There wil be an info message confirming that an order was sent. Their username and registered email is displayed but intentionally not editable.
+* A profile page where a user may view and edit their default delivery information, including full name, from the UserProfile model and view their order history.  Clicking on an order number links back to the checkout success page for that order showing the order confirmation details.  There will be an info message confirming that an order was sent. Their username and registered email is displayed but intentionally not editable.
 
 ### Left to implement
 
 At the end of this project there was not time do implement some hoped for features, large and small.  It is hoped in the future that they will be with the intention of making an actual business of this website.
 
-* Update dimensions of a cupbaord (or shelves) in the cart.  
-    * After the calculated cupboard page has been linked back to from the cart be able to send new dimensions back to the cart.  The functionality would be different from update quantity as the cupboard in the cart is defined by its dimensions so in effect changing them is actually completely replacing it.  It would probably be easies to add the new cupboard to the cart and remove the old.  The caveat is that the quantity of the originial must be conserved and applied to the new cupboard.
+* Update dimensions of a cupboard (or shelves) in the cart.  
+    * After the calculated cupboard page has been linked back to from the cart be able to send new dimensions back to the cart.  The functionality would be different from update quantity as the cupboard in the cart is defined by its dimensions so in effect changing them is actually completely replacing it.  It would probably be easies to add the new cupboard to the cart and remove the old.  The caveat is that the quantity of the original must be conserved and applied to the new cupboard.
 
 * django-address: 
-    * Would be nice to use to auto comple addresses.
+    * Would be nice to use to auto complete addresses.
 
 * Gallery Images:
     * The site is lacking gallery images for each design.  These ideally would be displayed on a small filmstrip of thumbnails on the cupboard details page and could open in a carousel on a modal when clicked on.   It would require another model for images which would have the design an image was associated with as a foreign key.
@@ -270,7 +270,7 @@ I was also put off by how difficult it would be to edit images for a design, if 
 I would like to attempt this functionality but it would require time to work on it.
 
 * Customise user account functionality:
-    * I would much like to customise the registration and login functionality, to have the option to cancel login and signout and to redirect to the previous page after any account account action has been performed.
+    * I would much like to customise the registration and login functionality, to have the option to cancel login and signout and to redirect to the previous page after any account action has been performed.
     * I would like to change the order of the fields on the signup form as I don't feel email is logically placed above username.
 
 * Example price calculator:
@@ -280,10 +280,10 @@ I would like to attempt this functionality but it would require time to work on 
     * A contact form to send emails and receive an automated reply that a user's message has been successfully delivered would be an improvement to the site.
 
 * Reviews:
-    * A form for logged in users to leave reviews which could then be displayed on a page and also attached to their user profile would be a good addition.  This would not be too difficult to implement as was only ommitted for lack of time.
+    * A form for logged in users to leave reviews which could then be displayed on a page and also attached to their user profile would be a good addition.  This would not be too difficult to implement as was only omitted for lack of time.
 
 * Other types in the types model:
-    * Other types would be possible in the model, for example, combination units, tables, beds and in places code exists to iterate through the types in the database and execute the current functionality.  However in others further coding would be needed, namely what the calculation should be for the cost -diffent for every type, and the existing types are named in the code for sorting functionality.
+    * Other types would be possible in the model, for example, combination units, tables, beds and in places code exists to iterate through the types in the database and execute the current functionality.  However in others further coding would be needed, namely what the calculation should be for the cost -different for every type, and the existing types are named in the code for sorting functionality.
 
 * Out of stock field:
     * If a material is currently unavailable it would be nice to be able to mark it as so and prevent it or designs made from it from being rendered, without having to delete the material completely and the. the designs associated with it being deleted by cascade also.
@@ -310,7 +310,7 @@ I would like to attempt this functionality but it would require time to work on 
     * Used for registration and login functionality.
 
 - [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-    * Used to dreate the responsive layout throughout the site. Navbar component used for the navigation and card content containers used throughout the site.
+    * Used to create the responsive layout throughout the site. Navbar component used for the navigation and card content containers used throughout the site.
 
 - [jQuery](https://jquery.com/)
     * Used for various script elements throughout the project.
@@ -372,7 +372,7 @@ I would like to attempt this functionality but it would require time to work on 
 
 **Site functionality**
 
-* The deployed site was reviewed and tested for registraion, login, logout, calculating costs, adding to and updating the cart, making purchases, viewing and editing profile information and adding, editing and deleting designs and materials by various family memebers on desktop and mobile devices.
+* The deployed site was reviewed and tested for registration, login, logout, calculating costs, adding to and updating the cart, making purchases, viewing and editing profile information and adding, editing and deleting designs and materials by various family members on desktop and mobile devices.
     * No known bugs were found.
 
 **Bugs and fixes**
@@ -384,7 +384,7 @@ I would like to attempt this functionality but it would require time to work on 
 **Pending Issues**
 
 *  Search bar width:
-    * Due to the layout of the navbar the search icon needs to be in a different column to the card and user icons. Thus it is not full width.  The search bar dropdown must be contained in the same parent element as the toggler in order for the bootstrap javascrip to expand it.  Thus the search bar is aonly as wide as the column containing the icon.  If it is moved out there is a javascript error in the console.  This is not an issue on large screens and the half width column looks sufficiently neat.  However on small mobiles, although the column has a width of 9, the search bar is quite narrow and would look much better if it took up the entire screen width.
+    * Due to the layout of the navbar the search icon needs to be in a different column to the card and user icons. Thus it is not full width.  The search bar dropdown must be contained in the same parent element as the toggler in order for the bootstrap javascrip to expand it.  Thus the search bar is only as wide as the column containing the icon.  If it is moved out there is a javascript error in the console.  This is not an issue on large screens and the half width column looks sufficiently neat.  However on small mobiles, although the column has a width of 9, the search bar is quite narrow and would look much better if it took up the entire screen width.
 
 **Functionality**
 1. All the features were tested on the following and were confirmed to be functioning correctly: 
@@ -533,7 +533,7 @@ I would like to attempt this functionality but it would require time to work on 
 
 ![User Storiesus28us30](media/readme/userstories/us28us30.png "User Storiesus28us30")
 
-31. Have an attractive online prescence encouraging users to buy.
+31. Have an attractive online preence encouraging users to buy.
 
 ![User Stories31](media/readme/userstories/us31.png "User Stories31")
 
@@ -550,7 +550,7 @@ I would like to attempt this functionality but it would require time to work on 
 
 The site was deployed to [Heroku](https://www.heroku.com/) following these steps:
 
-1. Navigate to [heroku.com](https://www.heroku.com/) and logining in as I was already a registered user. Sign up and log in if you don't.
+1. Navigate to [heroku.com](https://www.heroku.com/) and log in as I am already a registered user. Sign up and log in if you don't.
 
 2. Create a new app by clicking 'New' and then select 'Create new app'.
 
@@ -597,7 +597,7 @@ else:
     }
 ```
 
-18. Set the DATABASE_URL, originally from Heroku, in the gitpod envionment variables for this project by going to the gitpod dashboard>settings>variables.
+18. Set the DATABASE_URL, originally from Heroku, in the gitpod environment variables for this project by going to the gitpod dashboard>settings>variables.
 
 19. Type pip3 install gunicorn in the terminal, this will act as the webserver.
 
@@ -657,7 +657,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 34. Navigate to Heroku and check that ther is a build in process by clicking on the Activity tab.
 
-35. Navigate to aws.amazon.com nd click on create an AWS account.  Fill in email and a password, choose a username and select continue.
+35. Navigate to aws.amazon.com and click on create an AWS account.  Fill in email and a password, choose a username and select continue.
 
 36. On the account type page, select personal and fill out the required information, click create account and continue. Enter a credit card number which will be used for billing
 if going above the free usage limits but this won't go anywhere near them.
@@ -704,13 +704,13 @@ Before clicking Save, add a slash star here onto the end of the resource key. Th
 
 49. Click review policy, give it a name and a description and then click create policy.
 
-50. Back on the policies page the policy has been created. Attach itto the group previously created. Go to groups, click my manage custom-cupboards-group and click attach policy.
+50. Back on the policies page the policy has been created. Attach it to the group previously created. Go to groups, click my manage custom-cupboards-group and click attach policy.
 
 51. On the user's page click add user, create a user named custom-cupboards-staticfiles-user and give them programmatic access. Then select next.
 
 52. On the Add User to Group page, check the box next to manage-custom-cupboards then click next. Continue clicking next until the option to create user then click that.
 
-53. Download the CSV file which will contain this users access key and secret access key and very importanty save it.
+53. Download the CSV file which will contain this users access key and secret access key and very importantly save it.
 
 54. Back in gitpod install django-storages and boto3 by typing:
 ```
@@ -729,6 +729,7 @@ pip3 freeze > requirements.txt
 
 55. add an if statement to check if there's an environment variable called USE_AWS in the environment.
 If so define the AWS_STORAGE_BUCKET_NAME, the AWS_S3_REGION_NAME and our access key, and secret access key, which will come from the environment.
+Also add the AWS_S3_OBJECT_PARAMETERS to allow caching static and media files.
 ```
 if 'USE_AWS' in os.environ:
     
@@ -737,6 +738,10 @@ if 'USE_AWS' in os.environ:
     AWS_S3_REGION_NAME = 'eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
 ```
 
 56. Go to Heroku and add our AWS keys to the config variables. Add a key called USE_AWS and set to true.
@@ -770,11 +775,26 @@ class MediaStorage(S3Boto3Storage):
 
 63. Go to Amazon S3 and check that there is a static folder in the bucket with all static files in it.
 
+64. Go to S3 and create a new folder called media.
 
+65. Inside it, I'll click upload. Add files. And then select all the images needed for the project.
+They can be downloaded from the github repo Juliet-Simpson/Custom-Cupboards. Under permissions select grant public read access to these objects and then confirm the warning for that. Then click next then Upload.
 
-<!--  -->
+66. Confirm Postgres user email: Attempt to log in and get the email confirmation link from the Heroku app log or log.
 
+67. Add Stripe keys to Heroku config variables, these can be obtained by logging into stripe, copying the Publishable key and clicking reveal then copying the secret key in the API section.
 
+68.  Add the stripe keys to Heroku config variables.
+
+69. In the stripe developers menu, go to Webhooks and click endpoint. Add the URL for the Heroku app followed by /checkout/wh
+```
+https://custom-cupboards.herokuapp.com/cupboards/1/checkout/wh
+```
+70. Select receive all events and add endpoint and now reveal the webhooks signing secret.
+
+71. Add that to our Heroku config variables.  All Heroku config variables must match the variables in settings.py
+
+72. Make a test purchase through the Heroku app to check that everything is working. 
 
 ### Local Deployment
 
@@ -797,28 +817,31 @@ git remote rm origin
 python3 manage.py runserver
 ``` 
 
-
 ## Credits
 
-### Concept
+**Concept** 
+The idea was conceived by myself and my daughter Josephine's father Barry, a carpenter.  He feels there is a potential in the market for a business like this so I have set the wheels in motion by starting to build a website for it.
 
 
 ### Code 
 
-* Commented code taken or adapted from Code Institute Lessons.  
+* All code was written by me except for that which comes with the django package and that which has been taken from the code institute lessons.
 
-* 
+* Most code in the checkout app remains largely unchanged from the CI lessons, but for adding a full_name field to the UserProfile model in the checkout app, coming from the order form.
 
-* All other code was written by me.
+* Code in views.py and forms.py in the profiles app is also heavily reliant on the CI lessons.
 
-### Sources
-#### Python
+* All code for the custom image widget on the edit a design page is completely taken from the lessons and javascript for the quantity input selectors has been largely taken from the lessons, although adapted slightly as mine don't directly alter the quantity in the cart.  
 
+* Code for creating forms from database models has been heavily relied on although adapted.
 
-#### jQery
+* Apart from the project name, code in settings.py is identical to the CI lessons.
 
+**Sources**
 
-### Images
+* The official django documentation and the Bootstrap documentation have been of assistance throughout this project
+
+**Images**
 
 * Background Images
 
@@ -826,4 +849,14 @@ python3 manage.py runserver
 
 
 ### Acknowledgements
+
+* My family for coping without me for over a month, especially my little girl, while I have been glued to a laptop almost permanently.
+
+* My incredibly brainy friends at Aralia Systems plc who took the time to have a meeting with me and finally give me the advice I needed to get 'a cupboard in the cart' enabling me to move on with my project after being stuck for a week.
+
+* My other brainy friend Yassine for help with finally making the quantity input selectors work.
+
+* The code institute tutors for being so incredibly super nice and always doing their best to be helpful, many times coming up with innovative solutions to problems, even when they clearly have a heavy work load.
+
+* To Code Institute for introducing me to the wonderful world of coding, with its rollercoaster highs and lows and for giving me such a challenge that I've discovered capabilities I didn't know I had.
 
