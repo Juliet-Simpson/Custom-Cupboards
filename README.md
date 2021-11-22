@@ -109,29 +109,49 @@ These will all be the same in structure as the about links and very look very si
 
 The wireframes can be viewed here:
 
-- [Homepage wireframes](media/readme/home-wireframes.png)
+- [Homepage desktop wireframes](media/readme/wireframes/home-desktop.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Homepage mobile wireframess](media/readme/wireframes/home-mobile.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Designs page desktop wireframe](media/readme/wireframes/designs-desktop.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Designs page mobile wireframes](media/readme/wireframes/designs-mobile.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Cupboard Details page desktop wireframe](media/readme/wireframes/details-desktop.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Cupboard Details page mobile wireframe](media/readme/wireframes/details-mobile.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Calculated Cupboard page desktop wireframe](media/readme/wireframes/calculated-desktop.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Calculated Cupboard page mobile wireframe](media/readme/wireframes/calculated-mobile.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Cart page desktop wireframe](media/readme/wireframes/cart-desktop.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Cart page mobile wireframe](media/readme/wireframes/cart-mobile.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Checkout page desktop wireframe](media/readme/wireframes/checkout-desktop.png)
 
-- [Designs page wireframes](media/readme/designs-wireframes.png)
+- [Checkout page mobile wireframe](media/readme/wireframes/checkout-mobile.png)
+
+- [Checkout Success page desktop wireframe](media/readme/wireframes/checkout-success-desktop.png)
+
+- [Checkout Success page mobile wireframe](media/readme/wireframes/checkout-success-mobile.png)
+
+- [Profile page desktop wireframe](media/readme/wireframes/profile-desktop.png)
+
+- [Profile page mobile wireframe](media/readme/wireframes/profile-mobile.png)
+
+- [Add a Design page desktop wireframe](media/readme/wireframes/add-design-desktop.png)
+
+- [Add a Design page mobile wireframe](media/readme/wireframes/add-design-mobile.png)
+
+- [Materials page desktop wireframe](media/readme/wireframes/materials-desktop.png)
+
+- [Materials page mobile wireframes](media/readme/wireframes/materials-mobile.png)
+
+- [About/Info pages desktop wireframe](media/readme/wireframes/about-info-desktop.png)
+
+- [About/Info pages mobile wireframe](media/readme/wireframes/about-info-mobile.png)
 
 
 ### **Surface**
