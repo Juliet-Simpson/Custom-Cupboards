@@ -832,7 +832,12 @@ git clone https://github.com/Juliet-Simpson/custom-cupboards.git
 git remote rm origin 
 ```
 
-5. Run the project by typing:
+5. Install the required dependencies for the project by typing:
+```
+pip3 install -r requirements.txt
+```
+
+6. Run the project by typing:
 ```
 python3 manage.py runserver
 ``` 
