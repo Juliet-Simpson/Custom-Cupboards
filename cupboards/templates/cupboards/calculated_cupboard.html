@@ -114,8 +114,8 @@
 
                 <div class="row text-center ">
                     <div class="col-12 pt-3">
-                        <h3 class="text-center">£ {{cost}}</h3>
-                        <h6 class="text-center">Delivery: £{{postage}}</h6>
+                        <h3 class="text-center">£ {{cost|floatformat:2}}</h3>
+                        <h6 class="text-center">Delivery: £{{postage|floatformat:2}}</h6>
                     </div>
                 </div>
                 <form class="form text-center" action="{% url 'add_to_cart' cupboard.id code %}" method="POST">
