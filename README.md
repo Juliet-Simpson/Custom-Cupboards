@@ -23,6 +23,16 @@ USERNAME: super100
 
 PASSWORD: rubberplant
 
+To make a test Stripe payment use:
+
+CARD NUMBER: 4000008260000000
+
+EXPIRY DATE: Any random date in the future
+
+CVC: Any
+
+POST CODE: Any 
+
 ## UX
 
 ### **User Stories**
